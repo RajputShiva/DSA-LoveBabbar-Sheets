@@ -1,0 +1,15 @@
+class Solution {
+    int findMissing(int[] arr, int n) {
+        // code here
+        int diff=(arr[n-1]-arr[0])/n;  // logic of diff. and after that write code
+       for(int i=0;i<arr.length;i++)
+       {
+           if(arr[i+1]!=arr[i]+diff) // here check numbers are in AP or not
+           {
+              // System.out.print(diff+" ");
+               return arr[i]+diff;
+           }
+       }
+       return 0;
+    }
+}
