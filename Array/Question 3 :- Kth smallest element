@@ -1,0 +1,12 @@
+
+
+
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+int ans=-1;
+        Arrays.sort(arr); //first all arr i sorted ascending order than ckeck last Kth element and i fount it than i return. 
+        for(int i=0;i<k;i++) 
+        {
+            ans=arr[i];
+        }
+        return ans;
