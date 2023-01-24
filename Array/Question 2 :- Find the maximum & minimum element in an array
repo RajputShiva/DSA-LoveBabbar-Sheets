@@ -1,0 +1,32 @@
+Maximum and minimum of an array using Linear search:
+Initialize values of min and max as minimum and maximum of the first two elements(arr[0] ,arr[0]r)espectively.
+Starting from 1st, compare each element with max and min,
+and change max and min accordingly (i.e., if the element is smaller than min then change min, else if the element is greater than max then change max, else ignore the element) 
+T.C = O(N)
+S.C = O(1)
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+ public static void main(String[] args) {
+        Scanner sc=new Scanner(System.in);
+        int n =sc.nextInt();
+        int arr[]=new int[n];
+        for(int i=0;i<n;i++)
+        arr[i]=sc.nextInt();
+        MinANDMax(arr,n);
+   }
+   public static void MinANDMax(int arr[],int n){
+    if(arr==null || arr.length==0)
+       return;
+    int min=arr[0];
+    int max=arr[0];
+    int ans[]=new int[2];
+    for(int i=1;i<n;i++){
+      // if(arr[i]<min)
+      // min=arr[i];
+      // else if(arr[i]>max)
+      // max=arr[i];
+      min=Math.min(min,arr[i]);
+      max=Math.max(max,arr[i]);
+    }
+    System.out.println(min+" "+max);
+   }
+}
