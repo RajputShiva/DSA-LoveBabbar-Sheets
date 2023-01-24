@@ -1,0 +1,44 @@
+
+
+
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+Example :- 
+Input: 
+N = 5
+arr[]= {0 2 1 2 0}
+Output:
+0 0 1 2 2
+Explanation:
+0s 1s and 2s are segregated 
+into ascending order.
+
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+ public static void sort012(int a[], int n)
+    {
+        // code here 
+        // Here i check how many zeros , ones and twos 
+     int zero=0, one=0, two=0;
+       for(int i=0;i<n;i++){
+           if(a[i]==0)
+              zero++;
+           else if(a[i]==1)
+              one++;
+           else
+              two++;
+       }
+       //Here i check and put them in the array of Ascending order
+       for(int i=0;i<n;i++){
+           if(zero==0){
+               if(one==0){
+                   a[i] = 2;
+                   two--;
+               }else{
+                   a[i] = 1;
+                   one--;
+               }
+           }else{
+               a[i] = 0;
+               zero--;
+           }
+    }
