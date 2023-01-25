@@ -1,0 +1,118 @@
+
+
+
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+Example :-
+Input:
+5 3
+1 2 3 4 5
+1 2 3
+Output: 
+5
+Explanation: 
+1, 2, 3, 4 and 5 are the
+elements which comes in the union set
+of both arrays. So count is 5.
+
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+ public static int doUnion(int a[], int n, int b[], int m) 
+    {
+        //Your code here
+       // BruteForce O(n2) 
+        //  int ans, flag;
+
+        // if(n > m)
+
+        // {
+
+        //     ans = n;
+
+        //     for(int i = 0 ; i < m; i++)
+
+        //     {
+
+        //         flag = 0;
+
+        //         for(int j = 0; j < n; j++)
+
+        //         {
+
+        //             if(b[i] == a[j])
+
+        //             {
+
+        //                 flag = 1;
+
+        //                 break;
+
+        //             }
+
+        //         }
+
+        //         if(flag == 0)
+
+        //         ans++;
+
+        //     }
+
+        // }
+
+        // else 
+
+        // {
+
+        //     ans = m;
+
+        //     for(int i = 0 ; i < n; i++)
+
+        //     {
+
+        //         flag = 0;
+
+        //         for(int j = 0; j < m; j++)
+
+        //         {
+
+        //             if(a[i] == b[j])
+
+        //             {
+
+        //                 flag = 1;
+
+        //                 break;
+
+        //             }
+
+        //         }
+
+        //         if(flag == 0)
+
+        //         ans++;
+
+        //     }
+
+        // }
+
+        // return ans;
+        
+        
+        // TC = O(m+n)
+        //SC = O(m+n)
+        
+        Set<Integer> union = new HashSet<Integer>();
+
+        for(int i = 0 ; i<n ; i++){
+
+             union.add(a[i]);
+
+         }
+
+        for(int i = 0 ; i<m ; i++){
+
+            union.add(b[i]);
+            
+        }
+
+        return union.size();
+    }
