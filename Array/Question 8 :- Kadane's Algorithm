@@ -1,0 +1,78 @@
+                                                                **It's Very Important Question** 
+Example :-
+Input:
+N = 5
+Arr[] = {1,2,3,-2,5}
+Output:
+9
+Explanation:
+Max subarray sum is 9
+of elements (1, 2, 3, -2, 5) which 
+is a contiguous subarray.
+
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+long maxSubarraySum(int arr[], int n){
+        
+        // Your code here
+     //Bruteforce to optimal Approach all code Java
+
+      // O(N^3) ---> O(N^2)--> O(N)
+
+   // 1.)bruteforce approch 
+    //  by using 2 pointer i and j each time sum all element between i and j, find maximum
+
+         long maxi=Integer.MIN_VALUE;
+        for(int i=0;i<n-1;i++)
+        {
+            for(int j=i;j<n;j++)
+            {
+              long  sum=0;
+                for(int k=i;k<=j;k++)
+                {
+                    sum+=arr[k];
+                   
+                }
+                maxi=Math.max(maxi,sum);
+            }
+        }
+        return maxi;
+        
+    }
+   }
+   
+   
+   // 2) O(N^2)
+  // this task can also done by only 2 loop because each time j is increase so we added sum 
+
+            long maxi=Integer.MIN_VALUE;
+            for(int i=0;i<n-1;i++)
+            {
+                long sum=0;
+                for(int j=i;j<n;j++)
+                {
+                    sum+=arr[j];
+                    maxi=Math.max(maxi,sum);
+                }
+            }
+            return maxi;
+            
+        }
+    }
+    
+    
+//     3) Kadane's algo(O(N))
+
+      long sum=0;
+      long maxi=arr[0];
+      for(int i=0;i<n;i++)
+      {
+        sum=sum+arr[i]; 
+        if(sum>maxi)
+           maxi=sum;
+        if(sum<0)
+           sum=0; 
+      }
+      return maxi;
+   }
+ }
