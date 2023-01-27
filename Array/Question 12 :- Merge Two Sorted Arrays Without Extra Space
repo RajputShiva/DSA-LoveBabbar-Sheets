@@ -45,7 +45,8 @@ Time Complexity:O(n1 * n2) where n1 and n2 are the sizes of two arrays.
 Space Complexity:O(n1+n2) where n1 and n2 are the sizes of two arrays.
 
                                                         **Merging Without Using Extra Space**
-While iterating over the two sorted arrays parallelly, if we encounter the jth second array element is smaller than ith first array element, then the jth element is to be included and replace some kth element in the first array.
+While iterating over the two sorted arrays parallelly, if we encounter the jth second array element is smaller than ith first array element,
+then the jth element is to be included and replace some kth element in the first array.
 
 Algorithm :-
 
