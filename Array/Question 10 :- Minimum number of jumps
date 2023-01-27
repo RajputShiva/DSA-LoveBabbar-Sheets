@@ -52,7 +52,5 @@ SC = O(1)
         }
         else{
             return jump;    
-        }
-        
-    
+        }  
     }
