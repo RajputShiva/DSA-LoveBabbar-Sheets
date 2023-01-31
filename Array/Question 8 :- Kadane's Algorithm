@@ -68,10 +68,14 @@ long maxSubarraySum(int arr[], int n){
       for(int i=0;i<n;i++)
       {
         sum=sum+arr[i]; 
-        if(sum>maxi)
+         if(sum<0)
+            sum=0;
+            
+        // maxi=Math.max(maxi,sum);  //both are equal preform
+        
+        if(sum>maxi) //both are equal preform
            maxi=sum;
-        if(sum<0)
-           sum=0; 
+
       }
       return maxi;
    }
