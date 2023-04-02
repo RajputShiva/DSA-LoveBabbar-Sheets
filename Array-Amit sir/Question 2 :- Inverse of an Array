@@ -1,0 +1,30 @@
+Example :-
+n=5
+Input :-  3 4 1 2 0
+Output :- 4 2 3 0 1 
+
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+import java.util.*;
+public class Main {
+    public static void main(String[] args) {
+
+        Scanner sc = new Scanner(System.in);
+        int n = sc.nextInt();
+        int arr[] = new int[n];
+        for(int i=0;i<n;i++){
+            arr[i] = sc.nextInt();
+        }
+        int ans[] = Inverse(n,arr);
+        for(int i=0;i< ans.length;i++)
+            System.out.print(ans[i]+" ");
+        System.out.println();
+    }
+    public static int[] Inverse(int n,int arr[]){
+        int res[] = new int[n];
+        for(int i=0;i<n;i++){
+            int v = arr[i];
+            res[v] = i;
+        }
+        return res;
+    }
+}
