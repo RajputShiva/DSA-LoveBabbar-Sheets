@@ -1,0 +1,44 @@
+import java.util.*;
+public class Main {
+    public static void main(String[] args) {
+
+        Scanner sc = new Scanner(System.in);
+        int n = sc.nextInt();
+        int arr[] = new int[n];
+        for(int i=0;i<n;i++){
+            arr[i] = sc.nextInt();
+        }
+        int k = sc.nextInt();
+
+        Rotate(n,arr,k);
+        display(arr,n);
+    }
+
+    public  static  void reverse(int arr[],int i,int j){
+        while(i<j){
+            int temp = arr[i];
+            arr[i] = arr[j];
+            arr[j] = temp;
+            i++;
+            j--;
+        }
+    }
+    public static void Rotate(int n,int arr[],int k){
+        k = k % n;
+        if(k<0){
+            k = k+n;
+        }
+        // part 1
+        reverse(arr,0,n-k-1);
+        // part 2
+        reverse(arr,n-k,n-1);
+        //all
+        reverse(arr,0,n-1);
+    }
+    public  static void display(int []arr, int n){
+        for(int i=0;i<n;i++){
+            System.out.print(arr[i]+" ");
+        }
+        System.out.println();
+    }
+}
